@@ -1,0 +1,4 @@
+2024-12-01 01:02:07,750 - INFO - Namespace(data_dir='data', city='Seattle', fixed_noise=0.05, output_dir='results', log_level='INFO')
+2024-12-01 01:02:08,454 - INFO - Temperature column found: t_f
+2024-12-01 01:02:08,459 - INFO - Training data shape: torch.Size([37493, 2]), torch.Size([37493])
+2024-12-01 01:02:09,035 - INFO - Starting training

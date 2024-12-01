@@ -9,21 +9,12 @@ import gpytorch
 
 from src.models import ExactGPModel
 
-from src.utils import (
-    load_dataset,
-    create_folds,
-    standardize_data,
-    generate_data,
-    create_weight_matrix,
-    rasterize_temp
-)
-
 
 
 def main(args):
     # Initialize a logger
     logging.basicConfig(
-        filename=os.path.join(args.output_dir, "output.log"),
+        filename=os.path.join(args.output_dir, f"{args.city}_output.log"),
         filemode="w",
         level=args.log_level,
         format="%(asctime)s - %(levelname)s - %(message)s",
@@ -46,8 +37,15 @@ def main(args):
     gdf['y'] = gdf.geometry.y
 
     coordinates = gdf[['x', 'y']].to_numpy()
-    X, y = coordinates, gdf.temp_f #TODO: make sure temp_f column exists in the shapefile
+    
+    try:
+        temp_column = get_temperature_column(gdf)
+        logging.info(f"Temperature column found: {temp_column}")
+        X, y = coordinates, gdf[temp_column].to_numpy()
 
+    except ValueError as e:
+        print(e)
+    
     # Now, we need to standardize the data for the final fit
     x_shift = X.min(axis=0)
     x_scale = X.max(axis=0) - X.min(axis=0)
@@ -70,6 +68,12 @@ def main(args):
     fixed_noise = torch.full_like(y_train, args.fixed_noise)
     likelihood = gpytorch.likelihoods.FixedNoiseGaussianLikelihood(noise=fixed_noise)
     model = ExactGPModel(x_train, y_train, likelihood)
+
+    # Send to GPU
+    x_train = x_train.cuda()
+    y_train = y_train.cuda()
+    model = model.cuda()
+    likelihood = likelihood.cuda()
 
     # Find optimal model hyperparameters
     model.train()
@@ -99,6 +103,18 @@ def main(args):
 
     # Generate visualizations
     return
+
+def get_temperature_column(gdf):
+    # List of potential column names for temperature
+    possible_columns = ["temp", "temp_f", "t_f"] # Update this list as needed
+
+    # Check if any of these columns exist in the GeoDataFrame
+    for col in possible_columns:
+        if col in gdf.columns:
+            return col
+
+    # Raise an error if none are found
+    raise ValueError("No temperature column found in the GeoDataFrame.")
 
 if __name__ == "__main__":
     # Create the parser
