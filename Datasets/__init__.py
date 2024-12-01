@@ -1,7 +1,7 @@
 from .dataset import Dataset
 from .spatial_dataset import SpatialDataset
 
-list_cities = ["Boston", "Durham", "San Francisco"]
+list_cities = ["Boston", "Durham", "San Francisco", "Chicago", "Washington DC", "Seattle"]
 
 def load(name, data_dir):
     if name in list_cities:

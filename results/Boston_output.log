@@ -1,0 +1,4 @@
+2024-12-01 04:21:34,303 - INFO - Namespace(data_dir='data', city='Boston', fixed_noise=0.05, num_random_points=20000, output_dir='results', log_level='INFO')
+2024-12-01 04:21:34,445 - INFO - Loaded 20247 data points
+2024-12-01 04:21:34,998 - INFO - Starting training
+2024-12-01 04:22:40,375 - INFO - Epoch 1/50 - Loss: 2.674 - Lengthscale: 0.644
