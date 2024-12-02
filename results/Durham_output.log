@@ -1,4 +1,0 @@
-2024-12-01 01:29:33,715 - INFO - Namespace(data_dir='data', city='Durham', fixed_noise=0.05, output_dir='results', log_level='INFO')
-2024-12-01 01:29:34,042 - INFO - Temperature column found: temp_f
-2024-12-01 01:29:34,047 - INFO - Training data shape: torch.Size([35419, 2]), torch.Size([35419])
-2024-12-01 01:29:34,717 - INFO - Starting training

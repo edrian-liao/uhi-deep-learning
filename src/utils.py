@@ -91,7 +91,7 @@ def create_weight_matrix(dist_matrix, window_size, length_scale):
 def create_folds(data, k_folds):
     # Cluster the coordinates
     km = KMeans(n_clusters=k_folds, random_state=42)
-    km.fit(data.coords)
+    km.fit(data)
 
     # Return the labels
     return km.labels_

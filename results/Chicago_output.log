@@ -1,4 +1,0 @@
-2024-12-01 01:25:02,597 - INFO - Namespace(data_dir='data', city='Chicago', fixed_noise=0.05, output_dir='results', log_level='INFO')
-2024-12-01 01:25:02,824 - INFO - Temperature column found: t_f
-2024-12-01 01:25:02,828 - INFO - Training data shape: torch.Size([50834, 2]), torch.Size([50834])
-2024-12-01 01:25:03,375 - INFO - Starting training

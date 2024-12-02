@@ -1,3 +1,0 @@
-2024-12-01 03:59:40,072 - INFO - Namespace(data_dir='data', city='San Francisco', fixed_noise=0.05, output_dir='results', log_level='INFO')
-2024-12-01 03:59:40,689 - INFO - Starting training
-2024-12-01 04:01:04,160 - INFO - Epoch 1/50 - Loss: 0.861 - Lengthscale: 0.644
