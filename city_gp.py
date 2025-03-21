@@ -9,7 +9,7 @@ import gpytorch
 from sklearn.metrics import r2_score
 from sklearn.model_selection import KFold
 
-from src.models import ExactGPModel
+from src.models import ExactGPModel, NonStationaryGPModel
 
 
 def main(args):
@@ -73,9 +73,16 @@ def main(args):
         fixed_noise = torch.full_like(y_train, args.fixed_noise)
         # likelihood = gpytorch.likelihoods.GaussianLikelihood()
         likelihood = gpytorch.likelihoods.FixedNoiseGaussianLikelihood(noise=fixed_noise)
-        model = ExactGPModel(x_train, y_train, likelihood)
+
+        if args.model == 'ExactGP':
+            model = ExactGPModel(x_train, y_train, likelihood)
+        elif args.model == 'NSGP':
+            model = NonStationaryGPModel(x_train, y_train, likelihood, num_points=args.num_points)
+        else:
+            logging.info('ERROR: The model does not exist in the database.')
 
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        logging.info(f"Training {args.model} on {device}...")
         model = model.to(device)
         likelihood = likelihood.to(device)
         x_train, y_train = x_train.to(device), y_train.to(device)
@@ -190,6 +197,11 @@ if __name__ == "__main__":
         "city",
         type=str,
         help="The city where data is being collected from"
+    )
+    parser.add_argument(
+        "model_type",
+        type=str,
+        help="Stationary or non-stationary kernel"
     )
     parser.add_argument(
         "fixed_noise",

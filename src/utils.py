@@ -12,6 +12,35 @@ import rasterio as rio
 from rasterio.features import rasterize
 from rasterio.transform import from_bounds
 
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.colors as colors
+
+def custom_colormap():
+    """
+    Returns a custom colormap for visualizing Gaussian Process outputs.
+    """
+    custom_colors = [
+        "royalblue",
+        "mistyrose",
+        "salmon",
+        "red",
+        "darkred",
+        "tan",
+        "lawngreen",
+        "darkgreen",
+        "yellowgreen",
+        "goldenrod",
+        "lemonchiffon",
+        "yellow",
+        "violet",
+        "lightblue",
+        "cyan"
+    ]
+    print('ed')
+    return colors.ListedColormap(custom_colors)
+
+
 
 def standardize_data(x_train, x_val, y_train, y_val, scaler="minmax"):
     # Get the mean and standard deviation of the training data
