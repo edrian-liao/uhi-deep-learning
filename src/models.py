@@ -12,8 +12,9 @@ from gpytorch.kernels import Kernel, MaternKernel
 class ExactGPModel(gpytorch.models.ExactGP):
     def __init__(self, train_x, train_y, likelihood):
         super(ExactGPModel, self).__init__(train_x, train_y, likelihood)
-        self.mean_module = gpytorch.means.ZeroMean()
-        # self.mean_module = gpytorch.means.ConstantMean()
+        # self.mean_module = gpytorch.means.ZeroMean()
+        self.mean_module = gpytorch.means.ConstantMean()
+        # self.mean_module = gpytorch.means.LinearMean() # use this instead to 
         # self.covar_module = gpytorch.kernels.ScaleKernel(gpytorch.kernels.RBFKernel())
         self.covar_module = gpytorch.kernels.ScaleKernel(gpytorch.kernels.MaternKernel())
 
