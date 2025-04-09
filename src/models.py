@@ -12,8 +12,9 @@ from gpytorch.kernels import Kernel, MaternKernel
 class ExactGPModel(gpytorch.models.ExactGP):
     def __init__(self, train_x, train_y, likelihood):
         super(ExactGPModel, self).__init__(train_x, train_y, likelihood)
-        # self.mean_module = gpytorch.means.ZeroMean()
-        self.mean_module = gpytorch.means.ConstantMean()
+        self.mean_module = gpytorch.means.ZeroMean()
+        # self.mean_module = gpytorch.means.ConstantMean()
+        # self.mean_module.constant.data.fill_(train_y.mean())
         # self.mean_module = gpytorch.means.LinearMean() # use this instead to 
         # self.covar_module = gpytorch.kernels.ScaleKernel(gpytorch.kernels.RBFKernel())
         self.covar_module = gpytorch.kernels.ScaleKernel(gpytorch.kernels.MaternKernel())
@@ -47,30 +48,22 @@ class NonStationaryKernel(Kernel):
         self.base_kernel = base_kernel
 
         n = int(np.sqrt(num_rbf_centers))
-    
-        # Define grid parameters
-        grid_x = torch.linspace(0, 1.0, n)  # x-coordinates from 0.1 to 0.9 with step 0.1
-        grid_y = torch.linspace(0, 1.0, n)  # y-coordinates from 0.1 to 0.9 with step 0.1
 
-        # Generate all (x, y) coordinate pairs for the grid
+        # Define grid in real-world units (e.g. kilometers)
+        grid_x = torch.linspace(0, 1, n)
+        grid_y = torch.linspace(0, 1, n)
         grid_points = torch.cartesian_prod(grid_x, grid_y)
 
-        # Assign to self.rbf_centers
         self.register_buffer("rbf_centers", grid_points)
 
-        # Define coefficients (c_k in g(x))
         self.register_parameter(
             name="coefficients",
             parameter=torch.nn.Parameter(torch.randn(num_rbf_centers))
         )
-
-        # Initialize RBF widths constrained to (0, ∞) via softplus
         self.register_parameter(
             name="raw_rbf_widths",
             parameter=torch.nn.Parameter(torch.ones(num_rbf_centers))
         )
-
-        # register the constraint
         self.register_constraint("raw_rbf_widths", gpytorch.constraints.Positive())
 
     # @property
@@ -85,17 +78,24 @@ class NonStationaryKernel(Kernel):
 
     def _compute_signal_variance(self, x):
         distances = torch.cdist(x, self.rbf_centers) ** 2
-        rbf_values = torch.exp(-distances / self.rbf_widths().unsqueeze(0)) # ensure no division by zero
+        rbf_values = torch.exp(-distances / (2*self.rbf_widths().unsqueeze(0)))
         g_x = torch.matmul(rbf_values, self.coefficients)
         return g_x
 
 # GP Model
 class NonStationaryGPModel(gpytorch.models.ExactGP):
-    def __init__(self, train_x, train_y, likelihood, num_points=100):
+    def __init__(self, train_x, train_y, likelihood, num_points):
         super(NonStationaryGPModel, self).__init__(train_x, train_y, likelihood)
         self.mean_module = gpytorch.means.ZeroMean()
+        # self.mean_module = gpytorch.means.ConstantMean()
+        # self.mean_module.constant.data.fill_(train_y.mean())
+        # self.mean_module = gpytorch.means.LinearMean(input_size=train_x.shape[-1])
+
+
         self.covar_module = NonStationaryKernel(
-            base_kernel=MaternKernel(nu=1.5), num_rbf_centers=num_points, input_dim=train_x.shape[-1]
+            base_kernel=MaternKernel(nu=1.5),
+            num_rbf_centers=num_points,
+            input_dim=train_x.shape[-1]
         )
 
     def forward(self, x):
