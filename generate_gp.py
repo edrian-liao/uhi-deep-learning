@@ -174,18 +174,23 @@ def generate_predictions(model, likelihood, points, num_samples=4, y_mean=0.0, y
 
     return mean_pred, sample_preds
 
-gdf = gpd.read_file(f'data/shapefiles/{city}/pm_trav.shp')
-gdf = gdf.to_crs(epsg=3857) # in meters
-bounds = gdf.total_bounds
+# Read preprocessed CSV
+csv_path = f"data/csv/{city}_processed.csv"
+df = pd.read_csv(csv_path)
 
-gdf['x'] = gdf.geometry.x
-gdf['y'] = gdf.geometry.y
-coordinates = gdf[['x', 'y']].to_numpy()
-temperature_column = get_temperature_column(gdf)
-gdf['t_f'] = gdf[temperature_column]  # Use the identified temperature column
-gdf['t_f'] = gdf['t_f'].astype(float)  # Ensure the temperature column is float
+# Ensure correct format
+required_cols = {"x", "y", "temperature"}
+if not required_cols.issubset(df.columns):
+    raise ValueError(f"CSV file must contain columns: {required_cols}")
 
-X, y = coordinates, (gdf.t_f.to_numpy() - 32) * 5.0 / 9.0 # convert to celsius
+# Get coordinates and temperature
+X = df[['x', 'y']].to_numpy()
+y = df['temperature'].astype(float).to_numpy()
+
+# Compute bounding box from the coordinates
+xmin, ymin = X.min(axis=0)
+xmax, ymax = X.max(axis=0)
+bounds = (xmin, ymin, xmax, ymax)
 
 # Now, we need to standardize the data for the final fit
 x_shift = X.min(axis=0)
@@ -200,7 +205,7 @@ y_std = y.std()
 
 y_norm = (y - y_mean) / (y_std)
 
-random_indices = np.random.choice(len(X), size=20000, replace=False)
+random_indices = np.random.choice(len(X), size=10000, replace=False)
 x_tensor, y_tensor = torch.tensor(x_norm[random_indices]), torch.tensor(y_norm[random_indices])
 
 # Set device: use CUDA if available, fallback to CPU
@@ -208,9 +213,9 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 logging.info(f"Using device: {device}")
 
 # Train the GP model
-exact_gp_model = train_model(x_tensor, y_tensor, 'ExactGP', n_splits=4)
+exact_gp_model = train_model(x_tensor, y_tensor, 'ExactGP', n_splits=2)
 logging.info('\n')
-ns_gp_model = train_model(x_tensor, y_tensor,'NonStationaryGP', num_points=num_points, n_splits=4)
+ns_gp_model = train_model(x_tensor, y_tensor,'NonStationaryGP', num_points=num_points, n_splits=2)
 
 # Bounding box coordinates in kilometers
 xmin, ymin, xmax, ymax = bounds
@@ -244,72 +249,79 @@ ns_gp_samples = []
 for i in range(sample_preds_ns.shape[0]):
     ns_gp_samples.append(np.flipud(sample_preds_ns[i].reshape(len(y_coords), len(x_coords))))
 
+# Save to numpy files
+np.savez(f"results/gp/{city}_gp_predictions.npz",
+         mean_pred_ex=mean_pred_ex,
+         sample_preds_ex=sample_preds_ex,
+         mean_pred_ns=mean_pred_ns,
+         sample_preds_ns=sample_preds_ns)
+
 # Plot the results
 fig, ax = plt.subplots(2, 2, figsize=(10, 10))
 fig.suptitle(f'Samples from Stationary GP in {city}', fontsize=18)
 
 # Plot the mean prediction
-im0 = ax[0, 0].imshow(ex_gp_sample0, cmap="coolwarm")
+im0 = ax[0, 0].imshow(ex_gp_sample0, cmap="coolwarm", interpolation='bicubic')
 ax[0, 0].set_title('Mean')
 ax[0, 0].axis('off')
 colorbar = fig.colorbar(im0, ax=ax[0, 0])
 colorbar.set_label('Temperature (C)', rotation=270, labelpad=15)
 
 # Plot sample 1
-im1 = ax[0, 1].imshow(ex_gp_samples[0], cmap="coolwarm")
+im1 = ax[0, 1].imshow(ex_gp_samples[0], cmap="coolwarm", interpolation='bicubic')
 ax[0, 1].set_title('Sample 1')
 ax[0, 1].axis('off')
 colorbar = fig.colorbar(im1, ax=ax[0, 1])
 colorbar.set_label('Temperature (C)', rotation=270, labelpad=15)
 
 # Plot sample 2
-im2 = ax[1, 0].imshow(ex_gp_samples[1], cmap="coolwarm")
+im2 = ax[1, 0].imshow(ex_gp_samples[1], cmap="coolwarm", interpolation='bicubic')
 ax[1, 0].set_title('Sample 2')
 ax[1, 0].axis('off')
 colorbar = fig.colorbar(im2, ax=ax[1, 0])
 colorbar.set_label('Temperature (C)', rotation=270, labelpad=15)
 
 # Plot sample 3
-im3 = ax[1, 1].imshow(ex_gp_samples[2], cmap="coolwarm")
+im3 = ax[1, 1].imshow(ex_gp_samples[2], cmap="coolwarm", interpolation='bicubic')
 ax[1, 1].set_title('Sample 3')
 ax[1, 1].axis('off')
 colorbar = fig.colorbar(im3, ax=ax[1, 1])
 colorbar.set_label('Temperature (C)', rotation=270, labelpad=15)
 
 plt.tight_layout()
-plt.savefig(f"figures/gp/{city}_exact_gp.png", dpi=300)
+plt.savefig(f"data/figures/gp/{city}_exact_gp.png", dpi=300)
 
 # Plot the results
 fig, ax = plt.subplots(2, 2, figsize=(10, 10))
 fig.suptitle(f'Samples from Non-stationary GP in {city}', fontsize=18)
 
 # Plot the mean prediction
-im0 = ax[0, 0].imshow(ns_gp_sample0, cmap="coolwarm")
+im0 = ax[0, 0].imshow(ns_gp_sample0, cmap="coolwarm", interpolation='bicubic')
 ax[0, 0].set_title('Mean')
 ax[0, 0].axis('off')
 colorbar = fig.colorbar(im0, ax=ax[0, 0])
 colorbar.set_label('Temperature (C)', rotation=270, labelpad=15)
 
 # Plot sample 1
-im1 = ax[0, 1].imshow(ns_gp_samples[0], cmap="coolwarm")
+im1 = ax[0, 1].imshow(ns_gp_samples[0], cmap="coolwarm", interpolation='bicubic')
 ax[0, 1].set_title('Sample 1')
 ax[0, 1].axis('off')
 colorbar = fig.colorbar(im1, ax=ax[0, 1])
 colorbar.set_label('Temperature (C)', rotation=270, labelpad=15)
 
 # Plot sample 2
-im2 = ax[1, 0].imshow(ns_gp_samples[1], cmap="coolwarm")
+im2 = ax[1, 0].imshow(ns_gp_samples[1], cmap="coolwarm", interpolation='bicubic')
 ax[1, 0].set_title('Sample 2')
 ax[1, 0].axis('off')
 colorbar = fig.colorbar(im2, ax=ax[1, 0])
 colorbar.set_label('Temperature (C)', rotation=270, labelpad=15)
 
 # Plot sample 3
-im3 = ax[1, 1].imshow(ns_gp_samples[2], cmap="coolwarm")
+im3 = ax[1, 1].imshow(ns_gp_samples[2], cmap="coolwarm", interpolation='bicubic')
 ax[1, 1].set_title('Sample 3')
 ax[1, 1].axis('off')
 colorbar = fig.colorbar(im3, ax=ax[1, 1])
 colorbar.set_label('Temperature (C)', rotation=270, labelpad=15)
 
 plt.tight_layout()
-plt.savefig(f"figures/gp/{city}_ns_gp.png", dpi=300)
+plt.savefig(f"data/figures/gp/{city}_ns_gp.png", dpi=300)
