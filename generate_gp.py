@@ -205,7 +205,7 @@ y_std = y.std()
 
 y_norm = (y - y_mean) / (y_std)
 
-random_indices = np.random.choice(len(X), size=10000, replace=False)
+random_indices = np.random.choice(len(X), size=20000, replace=False)
 x_tensor, y_tensor = torch.tensor(x_norm[random_indices]), torch.tensor(y_norm[random_indices])
 
 # Set device: use CUDA if available, fallback to CPU
@@ -213,9 +213,9 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 logging.info(f"Using device: {device}")
 
 # Train the GP model
-exact_gp_model = train_model(x_tensor, y_tensor, 'ExactGP', n_splits=2)
+exact_gp_model = train_model(x_tensor, y_tensor, 'ExactGP', n_splits=4)
 logging.info('\n')
-ns_gp_model = train_model(x_tensor, y_tensor,'NonStationaryGP', num_points=num_points, n_splits=2)
+ns_gp_model = train_model(x_tensor, y_tensor,'NonStationaryGP', num_points=num_points, n_splits=4)
 
 # Bounding box coordinates in kilometers
 xmin, ymin, xmax, ymax = bounds
