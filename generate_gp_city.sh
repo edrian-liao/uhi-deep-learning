@@ -12,4 +12,4 @@
 source ~/.bashrc
 conda activate wildfire-ai
 
-python generate_gp.py --city Boston --resolution 300 --num_points 9
+python generate_gp.py --city "Baltimore_A" --resolution 300 --num_points 9
