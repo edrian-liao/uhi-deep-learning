@@ -50,8 +50,8 @@ class NonStationaryKernel(Kernel):
         n = int(np.sqrt(num_rbf_centers))
 
         # Define grid in real-world units (e.g. kilometers)
-        grid_x = torch.linspace(0, 1, n)
-        grid_y = torch.linspace(0, 1, n)
+        grid_x = torch.linspace(0.1, 0.9, n)
+        grid_y = torch.linspace(0.1, 0.9, n)
         grid_points = torch.cartesian_prod(grid_x, grid_y)
 
         self.register_buffer("rbf_centers", grid_points)
