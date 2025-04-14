@@ -24,7 +24,7 @@ def preprocess_shapefile_to_csv(city, output_dir="preprocessed_csv"):
     # Convert to Celsius unless already in Celsius (column name is 't')
     if temp_col.lower() != "t":
         gdf["temperature"] = (gdf["temperature"] - 32) * 5.0 / 9.0
-        
+
     max_temp = gdf["temperature"].max()
     min_temp = gdf["temperature"].min()
     print(f"Processing {city} with temperature range: {min_temp} to {max_temp}")
@@ -117,4 +117,4 @@ cities = [
     "Washington DC"
 ]
 for city in cities:
-    preprocess_shapefile_to_csv(city)
+    preprocess_shapefile_to_csv(city, "./data/csv")
