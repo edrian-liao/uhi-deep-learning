@@ -175,6 +175,20 @@ if not required_cols.issubset(df.columns):
 X = df[['x', 'y']].to_numpy()
 y = df['temperature'].astype(float).to_numpy()
 
+# Step 1: Randomly pick subset
+indices = np.random.choice(len(X), size=20000, replace=False)
+X = X[indices]
+y = y[indices]
+
+# Step 2: Normalize that subset
+x_mean = X.mean(axis=0)
+x_std = X.std(axis=0)
+X_norm = (X - x_mean) / (x_std + 1e-8)
+
+y_mean = y.mean()
+y_std = y.std()
+y_norm = (y - y_mean) / (y_std + 1e-8)
+
 # Compute bounding box from the coordinates
 xmin, ymin = X.min(axis=0)
 xmax, ymax = X.max(axis=0)
@@ -193,8 +207,7 @@ y_std = y.std()
 
 y_norm = (y - y_mean) / (y_std)
 
-random_indices = np.random.choice(len(X), size=10000, replace=False)
-x_tensor, y_tensor = torch.tensor(x_norm[random_indices]), torch.tensor(y_norm[random_indices])
+x_tensor, y_tensor = torch.tensor(x_norm), torch.tensor(y_norm)
 
 # Set device: use CUDA if available, fallback to CPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
