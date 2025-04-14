@@ -15,14 +15,19 @@ def preprocess_shapefile_to_csv(city, output_dir="preprocessed_csv"):
     gdf["y"] = gdf.geometry.y
 
     # Identify temperature column
-    temp_col = next((col for col in gdf.columns if col.lower() in ["temp", "temp_f", "t_f", "t", "T_f"]), None)
+    temp_col = next((col for col in gdf.columns if col.lower() in ["temp_f", "t_f", "t"]), None)
     if temp_col is None:
         raise ValueError(f"No temperature column found in: {input_path}")
 
     gdf["temperature"] = gdf[temp_col].astype(float)
 
-    # Convert to Celsius
-    gdf["temperature"] = (gdf["temperature"] - 32) * 5.0 / 9.0
+    # Convert to Celsius unless already in Celsius (column name is 't')
+    if temp_col.lower() != "t":
+        gdf["temperature"] = (gdf["temperature"] - 32) * 5.0 / 9.0
+        
+    max_temp = gdf["temperature"].max()
+    min_temp = gdf["temperature"].min()
+    print(f"Processing {city} with temperature range: {min_temp} to {max_temp}")
 
     os.makedirs(output_dir, exist_ok=True)
     ominx, ominy, omaxx, omaxy = gdf.total_bounds
