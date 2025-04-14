@@ -239,10 +239,12 @@ for i in range(sample_preds_ns.shape[0]):
 
 # Save to numpy files
 np.savez(f"results/gp/{city}_gp_predictions.npz",
-         mean_pred_ex=mean_pred_ex,
-         sample_preds_ex=sample_preds_ex,
-         mean_pred_ns=mean_pred_ns,
-         sample_preds_ns=sample_preds_ns)
+         ex_gp_sample0=ex_gp_sample0,
+         ex_gp_samples=np.array(ex_gp_samples),
+         ns_gp_sample0=ns_gp_sample0,
+         ns_gp_samples=np.array(ns_gp_samples),
+         x_coords=x_coords,
+         y_coords=y_coords)
 
 # Plot the results
 fig, ax = plt.subplots(2, 2, figsize=(10, 10))
