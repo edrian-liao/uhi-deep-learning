@@ -12,4 +12,8 @@
 source ~/.bashrc
 conda activate wildfire-ai
 
-python generate_gp.py --city "Atlanta" --resolution 500 --num_points 4
+python generate_gp.py --city "Los Angeles" --resolution 500 --num_points 4
+python generate_gp.py --city "Miami" --resolution 500 --num_points 4
+python generate_gp.py --city "Nashville" --resolution 500 --num_points 4
+python generate_gp.py --city "New Orleans" --resolution 500 --num_points 4
+python generate_gp.py --city "NYC" --resolution 500 --num_points 4
