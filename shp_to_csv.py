@@ -15,7 +15,7 @@ def preprocess_shapefile_to_csv(city, output_dir="preprocessed_csv"):
     gdf["y"] = gdf.geometry.y
 
     # Identify temperature column
-    temp_col = next((col for col in gdf.columns if col.lower() in ["temp", "temp_f", "t_f", "t", "t_c", "t_f"]), None)
+    temp_col = next((col for col in gdf.columns if col.lower() in ["temp", "temp_f", "t_f", "t", "T_f"]), None)
     if temp_col is None:
         raise ValueError(f"No temperature column found in: {input_path}")
 
