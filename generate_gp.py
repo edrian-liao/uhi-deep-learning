@@ -84,10 +84,10 @@ def train_model(X, y, model_str='ExactGP', num_points=16, n_splits=5):
         # likelihood = gpytorch.likelihoods.StudentTLikelihood()
         if model_str == 'ExactGP':
             model = ExactGPModel(train_x, train_y, likelihood).to(device)
-            EPOCHS = 60
+            EPOCHS = 40
         elif model_str == 'NonStationaryGP':
             model = NonStationaryGPModel(train_x, train_y, likelihood, num_points=num_points).to(device)
-            EPOCHS = 5gt0
+            EPOCHS = 30
 
         model.train()
         likelihood.train()
