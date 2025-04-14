@@ -174,8 +174,13 @@ if not required_cols.issubset(df.columns):
 # Get coordinates and temperature
 X = df[['x', 'y']].to_numpy()
 y = df['temperature'].astype(float).to_numpy()
-y = y[y > 0]  # Filter out non-positive temperatures
-X = X[y > 0]  # Filter corresponding coordinates
+
+# Create a boolean mask for valid (positive) temperatures
+valid_mask = y > 0
+
+# Apply mask to both X and y
+X = X[valid_mask]
+y = y[valid_mask]
 
 # Step 1: Randomly pick subset
 if len(X) > 20000:
