@@ -4,7 +4,7 @@
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --output=./gen_gp.out
 #SBATCH --error=./gen_gp.err
-#SBATCH --mem=64G
+#SBATCH --mem=100G
 
 source ~/.bashrc
 conda activate wildfire-ai
@@ -39,5 +39,5 @@ cities=(
 for city in "${cities[@]}"
 do
   echo "🚀 Starting GP generation for: $city"
-  python generate_gp.py --city "$city" --resolution 500 --num_points 9
+  python generate_gp.py --city "$city" --resolution 300 --num_points 4
 done
