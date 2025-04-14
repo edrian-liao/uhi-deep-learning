@@ -33,11 +33,8 @@ resolution = args.resolution
 num_points = args.num_points
 
 # --- Logging Setup ---
-# Make sure results.logs directory exists
-os.makedirs("results.logs", exist_ok=True)
-
 # Define log file name
-log_filename = os.path.join("results.logs", f"{city}_generate_gp.log")
+log_filename = os.path.join("logs", f"{city}_generate_gp.log")
 
 # Configure logging
 logging.basicConfig(

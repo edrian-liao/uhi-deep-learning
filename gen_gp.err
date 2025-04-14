@@ -1,0 +1,415 @@
+2025-04-13 22:11:16,005 - INFO - Logging initialized for city: Atlanta
+2025-04-13 22:11:16,255 - INFO - Using device: cuda
+2025-04-13 22:11:16,256 - INFO - 
+Fold 1/4
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:81: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:82: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:83: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
+2025-04-13 22:11:20,600 - INFO - Epoch 1/40 - Loss: 1.0488
+2025-04-13 22:11:20,789 - INFO - Epoch 2/40 - Loss: 1.0273
+2025-04-13 22:11:20,978 - INFO - Epoch 3/40 - Loss: 1.0061
+2025-04-13 22:11:21,167 - INFO - Epoch 4/40 - Loss: 0.9847
+2025-04-13 22:11:21,353 - INFO - Epoch 5/40 - Loss: 0.9642
+2025-04-13 22:11:21,541 - INFO - Epoch 6/40 - Loss: 0.9433
+2025-04-13 22:11:21,729 - INFO - Epoch 7/40 - Loss: 0.9220
+2025-04-13 22:11:21,916 - INFO - Epoch 8/40 - Loss: 0.8998
+2025-04-13 22:11:22,102 - INFO - Epoch 9/40 - Loss: 0.8756
+2025-04-13 22:11:22,290 - INFO - Epoch 10/40 - Loss: 0.8489
+2025-04-13 22:11:22,480 - INFO - Epoch 11/40 - Loss: 0.8188
+2025-04-13 22:11:22,671 - INFO - Epoch 12/40 - Loss: 0.7837
+2025-04-13 22:11:22,860 - INFO - Epoch 13/40 - Loss: 0.7426
+2025-04-13 22:11:23,049 - INFO - Epoch 14/40 - Loss: 0.6916
+2025-04-13 22:11:23,239 - INFO - Epoch 15/40 - Loss: 0.6277
+2025-04-13 22:11:23,429 - INFO - Epoch 16/40 - Loss: 0.5470
+2025-04-13 22:11:23,619 - INFO - Epoch 17/40 - Loss: 0.4651
+2025-04-13 22:11:23,809 - INFO - Epoch 18/40 - Loss: 0.3759
+2025-04-13 22:11:23,998 - INFO - Epoch 19/40 - Loss: 0.2868
+2025-04-13 22:11:24,188 - INFO - Epoch 20/40 - Loss: 0.1995
+2025-04-13 22:11:24,378 - INFO - Epoch 21/40 - Loss: 0.1178
+2025-04-13 22:11:24,571 - INFO - Epoch 22/40 - Loss: 0.0606
+2025-04-13 22:11:24,778 - INFO - Epoch 23/40 - Loss: 0.0226
+2025-04-13 22:11:24,997 - INFO - Epoch 24/40 - Loss: -0.0186
+2025-04-13 22:11:25,219 - INFO - Epoch 25/40 - Loss: -0.0683
+2025-04-13 22:11:25,441 - INFO - Epoch 26/40 - Loss: -0.1231
+2025-04-13 22:11:25,682 - INFO - Epoch 27/40 - Loss: -0.1328
+2025-04-13 22:11:25,927 - INFO - Epoch 28/40 - Loss: -0.1668
+2025-04-13 22:11:26,180 - INFO - Epoch 29/40 - Loss: -0.1964
+2025-04-13 22:11:26,421 - INFO - Epoch 30/40 - Loss: -0.2426
+2025-04-13 22:11:26,669 - INFO - Epoch 31/40 - Loss: -0.2677
+2025-04-13 22:11:26,936 - INFO - Epoch 32/40 - Loss: -0.2816
+2025-04-13 22:11:27,207 - INFO - Epoch 33/40 - Loss: -0.2865
+2025-04-13 22:11:27,490 - INFO - Epoch 34/40 - Loss: -0.2934
+2025-04-13 22:11:27,766 - INFO - Epoch 35/40 - Loss: -0.3215
+2025-04-13 22:11:28,048 - INFO - Epoch 36/40 - Loss: -0.3314
+2025-04-13 22:11:28,343 - INFO - Epoch 37/40 - Loss: -0.3181
+2025-04-13 22:11:28,647 - INFO - Epoch 38/40 - Loss: -0.3163
+2025-04-13 22:11:28,960 - INFO - Epoch 39/40 - Loss: -0.2983
+2025-04-13 22:11:29,298 - INFO - Epoch 40/40 - Loss: -0.2801
+2025-04-13 22:11:30,575 - INFO - Validation R² (Fold 1): 0.9884
+2025-04-13 22:11:30,575 - INFO - 
+Fold 2/4
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:81: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:82: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:83: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
+2025-04-13 22:11:30,771 - INFO - Epoch 1/40 - Loss: 1.0488
+2025-04-13 22:11:30,959 - INFO - Epoch 2/40 - Loss: 1.0272
+2025-04-13 22:11:31,148 - INFO - Epoch 3/40 - Loss: 1.0055
+2025-04-13 22:11:31,338 - INFO - Epoch 4/40 - Loss: 0.9843
+2025-04-13 22:11:31,524 - INFO - Epoch 5/40 - Loss: 0.9627
+2025-04-13 22:11:31,710 - INFO - Epoch 6/40 - Loss: 0.9413
+2025-04-13 22:11:31,899 - INFO - Epoch 7/40 - Loss: 0.9193
+2025-04-13 22:11:32,086 - INFO - Epoch 8/40 - Loss: 0.8964
+2025-04-13 22:11:32,277 - INFO - Epoch 9/40 - Loss: 0.8714
+2025-04-13 22:11:32,467 - INFO - Epoch 10/40 - Loss: 0.8450
+2025-04-13 22:11:32,657 - INFO - Epoch 11/40 - Loss: 0.8135
+2025-04-13 22:11:32,848 - INFO - Epoch 12/40 - Loss: 0.7788
+2025-04-13 22:11:33,038 - INFO - Epoch 13/40 - Loss: 0.7379
+2025-04-13 22:11:33,228 - INFO - Epoch 14/40 - Loss: 0.6876
+2025-04-13 22:11:33,417 - INFO - Epoch 15/40 - Loss: 0.6279
+2025-04-13 22:11:33,607 - INFO - Epoch 16/40 - Loss: 0.5514
+2025-04-13 22:11:33,798 - INFO - Epoch 17/40 - Loss: 0.4625
+2025-04-13 22:11:33,988 - INFO - Epoch 18/40 - Loss: 0.3673
+2025-04-13 22:11:34,177 - INFO - Epoch 19/40 - Loss: 0.2825
+2025-04-13 22:11:34,367 - INFO - Epoch 20/40 - Loss: 0.1939
+2025-04-13 22:11:34,557 - INFO - Epoch 21/40 - Loss: 0.1060
+2025-04-13 22:11:34,749 - INFO - Epoch 22/40 - Loss: 0.0464
+2025-04-13 22:11:34,947 - INFO - Epoch 23/40 - Loss: 0.0024
+2025-04-13 22:11:35,157 - INFO - Epoch 24/40 - Loss: -0.0341
+2025-04-13 22:11:35,384 - INFO - Epoch 25/40 - Loss: -0.0681
+2025-04-13 22:11:35,618 - INFO - Epoch 26/40 - Loss: -0.1025
+2025-04-13 22:11:35,860 - INFO - Epoch 27/40 - Loss: -0.1314
+2025-04-13 22:11:36,102 - INFO - Epoch 28/40 - Loss: -0.1695
+2025-04-13 22:11:36,349 - INFO - Epoch 29/40 - Loss: -0.1993
+2025-04-13 22:11:36,616 - INFO - Epoch 30/40 - Loss: -0.2175
+2025-04-13 22:11:36,899 - INFO - Epoch 31/40 - Loss: -0.2293
+2025-04-13 22:11:37,176 - INFO - Epoch 32/40 - Loss: -0.2643
+2025-04-13 22:11:37,455 - INFO - Epoch 33/40 - Loss: -0.3007
+2025-04-13 22:11:37,742 - INFO - Epoch 34/40 - Loss: -0.3045
+2025-04-13 22:11:38,046 - INFO - Epoch 35/40 - Loss: -0.3109
+2025-04-13 22:11:38,354 - INFO - Epoch 36/40 - Loss: -0.3053
+2025-04-13 22:11:38,680 - INFO - Epoch 37/40 - Loss: -0.2913
+2025-04-13 22:11:38,996 - INFO - Epoch 38/40 - Loss: -0.3109
+2025-04-13 22:11:39,329 - INFO - Epoch 39/40 - Loss: -0.2887
+2025-04-13 22:11:39,657 - INFO - Epoch 40/40 - Loss: -0.2916
+2025-04-13 22:11:40,883 - INFO - Validation R² (Fold 2): 0.9882
+2025-04-13 22:11:40,883 - INFO - 
+Fold 3/4
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:81: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:82: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:83: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
+2025-04-13 22:11:41,064 - INFO - Epoch 1/40 - Loss: 1.0477
+2025-04-13 22:11:41,244 - INFO - Epoch 2/40 - Loss: 1.0262
+2025-04-13 22:11:41,428 - INFO - Epoch 3/40 - Loss: 1.0049
+2025-04-13 22:11:41,608 - INFO - Epoch 4/40 - Loss: 0.9837
+2025-04-13 22:11:41,791 - INFO - Epoch 5/40 - Loss: 0.9625
+2025-04-13 22:11:41,976 - INFO - Epoch 6/40 - Loss: 0.9412
+2025-04-13 22:11:42,157 - INFO - Epoch 7/40 - Loss: 0.9195
+2025-04-13 22:11:42,339 - INFO - Epoch 8/40 - Loss: 0.8964
+2025-04-13 22:11:42,521 - INFO - Epoch 9/40 - Loss: 0.8713
+2025-04-13 22:11:42,706 - INFO - Epoch 10/40 - Loss: 0.8436
+2025-04-13 22:11:42,887 - INFO - Epoch 11/40 - Loss: 0.8135
+2025-04-13 22:11:43,068 - INFO - Epoch 12/40 - Loss: 0.7789
+2025-04-13 22:11:43,250 - INFO - Epoch 13/40 - Loss: 0.7366
+2025-04-13 22:11:43,431 - INFO - Epoch 14/40 - Loss: 0.6869
+2025-04-13 22:11:43,615 - INFO - Epoch 15/40 - Loss: 0.6233
+2025-04-13 22:11:43,797 - INFO - Epoch 16/40 - Loss: 0.5488
+2025-04-13 22:11:43,979 - INFO - Epoch 17/40 - Loss: 0.4606
+2025-04-13 22:11:44,161 - INFO - Epoch 18/40 - Loss: 0.3753
+2025-04-13 22:11:44,341 - INFO - Epoch 19/40 - Loss: 0.2854
+2025-04-13 22:11:44,527 - INFO - Epoch 20/40 - Loss: 0.1896
+2025-04-13 22:11:44,709 - INFO - Epoch 21/40 - Loss: 0.1115
+2025-04-13 22:11:44,895 - INFO - Epoch 22/40 - Loss: 0.0394
+2025-04-13 22:11:45,091 - INFO - Epoch 23/40 - Loss: 0.0177
+2025-04-13 22:11:45,298 - INFO - Epoch 24/40 - Loss: -0.0292
+2025-04-13 22:11:45,506 - INFO - Epoch 25/40 - Loss: -0.0787
+2025-04-13 22:11:45,727 - INFO - Epoch 26/40 - Loss: -0.1088
+2025-04-13 22:11:45,955 - INFO - Epoch 27/40 - Loss: -0.1451
+2025-04-13 22:11:46,190 - INFO - Epoch 28/40 - Loss: -0.1753
+2025-04-13 22:11:46,425 - INFO - Epoch 29/40 - Loss: -0.2148
+2025-04-13 22:11:46,675 - INFO - Epoch 30/40 - Loss: -0.2383
+2025-04-13 22:11:46,947 - INFO - Epoch 31/40 - Loss: -0.2494
+2025-04-13 22:11:47,229 - INFO - Epoch 32/40 - Loss: -0.2670
+2025-04-13 22:11:47,496 - INFO - Epoch 33/40 - Loss: -0.2967
+2025-04-13 22:11:47,789 - INFO - Epoch 34/40 - Loss: -0.2857
+2025-04-13 22:11:48,065 - INFO - Epoch 35/40 - Loss: -0.3351
+2025-04-13 22:11:48,352 - INFO - Epoch 36/40 - Loss: -0.3364
+2025-04-13 22:11:48,648 - INFO - Epoch 37/40 - Loss: -0.3368
+2025-04-13 22:11:48,955 - INFO - Epoch 38/40 - Loss: -0.3155
+2025-04-13 22:11:49,255 - INFO - Epoch 39/40 - Loss: -0.3337
+2025-04-13 22:11:49,587 - INFO - Epoch 40/40 - Loss: -0.2943
+2025-04-13 22:11:50,823 - INFO - Validation R² (Fold 3): 0.9881
+2025-04-13 22:11:50,823 - INFO - 
+Fold 4/4
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:81: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:82: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:83: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
+2025-04-13 22:11:51,006 - INFO - Epoch 1/40 - Loss: 1.0494
+2025-04-13 22:11:51,189 - INFO - Epoch 2/40 - Loss: 1.0278
+2025-04-13 22:11:51,370 - INFO - Epoch 3/40 - Loss: 1.0064
+2025-04-13 22:11:51,548 - INFO - Epoch 4/40 - Loss: 0.9848
+2025-04-13 22:11:51,731 - INFO - Epoch 5/40 - Loss: 0.9640
+2025-04-13 22:11:51,913 - INFO - Epoch 6/40 - Loss: 0.9426
+2025-04-13 22:11:52,095 - INFO - Epoch 7/40 - Loss: 0.9216
+2025-04-13 22:11:52,275 - INFO - Epoch 8/40 - Loss: 0.8985
+2025-04-13 22:11:52,458 - INFO - Epoch 9/40 - Loss: 0.8748
+2025-04-13 22:11:52,640 - INFO - Epoch 10/40 - Loss: 0.8477
+2025-04-13 22:11:52,821 - INFO - Epoch 11/40 - Loss: 0.8171
+2025-04-13 22:11:53,001 - INFO - Epoch 12/40 - Loss: 0.7836
+2025-04-13 22:11:53,185 - INFO - Epoch 13/40 - Loss: 0.7416
+2025-04-13 22:11:53,371 - INFO - Epoch 14/40 - Loss: 0.6913
+2025-04-13 22:11:53,554 - INFO - Epoch 15/40 - Loss: 0.6273
+2025-04-13 22:11:53,736 - INFO - Epoch 16/40 - Loss: 0.5545
+2025-04-13 22:11:53,917 - INFO - Epoch 17/40 - Loss: 0.4712
+2025-04-13 22:11:54,099 - INFO - Epoch 18/40 - Loss: 0.3687
+2025-04-13 22:11:54,281 - INFO - Epoch 19/40 - Loss: 0.2872
+2025-04-13 22:11:54,462 - INFO - Epoch 20/40 - Loss: 0.1921
+2025-04-13 22:11:54,645 - INFO - Epoch 21/40 - Loss: 0.1110
+2025-04-13 22:11:54,839 - INFO - Epoch 22/40 - Loss: 0.0836
+2025-04-13 22:11:55,037 - INFO - Epoch 23/40 - Loss: 0.0173
+2025-04-13 22:11:55,237 - INFO - Epoch 24/40 - Loss: -0.0290
+2025-04-13 22:11:55,445 - INFO - Epoch 25/40 - Loss: -0.0801
+2025-04-13 22:11:55,654 - INFO - Epoch 26/40 - Loss: -0.1307
+2025-04-13 22:11:55,872 - INFO - Epoch 27/40 - Loss: -0.1547
+2025-04-13 22:11:56,090 - INFO - Epoch 28/40 - Loss: -0.1928
+2025-04-13 22:11:56,333 - INFO - Epoch 29/40 - Loss: -0.1911
+2025-04-13 22:11:56,570 - INFO - Epoch 30/40 - Loss: -0.2439
+2025-04-13 22:11:56,821 - INFO - Epoch 31/40 - Loss: -0.2450
+2025-04-13 22:11:57,086 - INFO - Epoch 32/40 - Loss: -0.2677
+2025-04-13 22:11:57,363 - INFO - Epoch 33/40 - Loss: -0.2824
+2025-04-13 22:11:57,621 - INFO - Epoch 34/40 - Loss: -0.3306
+2025-04-13 22:11:57,890 - INFO - Epoch 35/40 - Loss: -0.3382
+2025-04-13 22:11:58,175 - INFO - Epoch 36/40 - Loss: -0.3230
+2025-04-13 22:11:58,463 - INFO - Epoch 37/40 - Loss: -0.3380
+2025-04-13 22:11:58,761 - INFO - Epoch 38/40 - Loss: -0.3140
+2025-04-13 22:11:59,089 - INFO - Epoch 39/40 - Loss: -0.2856
+2025-04-13 22:11:59,429 - INFO - Epoch 40/40 - Loss: -0.2629
+2025-04-13 22:12:00,695 - INFO - Validation R² (Fold 4): 0.9892
+2025-04-13 22:12:00,695 - INFO - 
+Average R² across folds: 0.9885
+2025-04-13 22:12:00,695 - INFO - Best R² across folds: 0.9892
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:141: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  final_model = best_fold_model(torch.tensor(X, dtype=torch.float32).to(device),
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:142: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(y, dtype=torch.float32).to(device),
+2025-04-13 22:12:00,706 - INFO - 
+
+2025-04-13 22:12:00,707 - INFO - 
+Fold 1/4
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:81: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:82: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:83: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
+2025-04-13 22:12:00,910 - INFO - Epoch 1/30 - Loss: 0.8769
+2025-04-13 22:12:01,100 - INFO - Epoch 2/30 - Loss: 0.8301
+2025-04-13 22:12:01,290 - INFO - Epoch 3/30 - Loss: 0.7814
+2025-04-13 22:12:01,481 - INFO - Epoch 4/30 - Loss: 0.7314
+2025-04-13 22:12:01,671 - INFO - Epoch 5/30 - Loss: 0.6847
+2025-04-13 22:12:01,861 - INFO - Epoch 6/30 - Loss: 0.6415
+2025-04-13 22:12:02,050 - INFO - Epoch 7/30 - Loss: 0.6041
+2025-04-13 22:12:02,240 - INFO - Epoch 8/30 - Loss: 0.5732
+2025-04-13 22:12:02,431 - INFO - Epoch 9/30 - Loss: 0.5406
+2025-04-13 22:12:02,621 - INFO - Epoch 10/30 - Loss: 0.5075
+2025-04-13 22:12:02,811 - INFO - Epoch 11/30 - Loss: 0.4675
+2025-04-13 22:12:03,039 - INFO - Epoch 12/30 - Loss: 0.4490
+2025-04-13 22:12:03,229 - INFO - Epoch 13/30 - Loss: 0.3842
+2025-04-13 22:12:03,419 - INFO - Epoch 14/30 - Loss: 0.3425
+2025-04-13 22:12:03,609 - INFO - Epoch 15/30 - Loss: 0.2970
+2025-04-13 22:12:03,800 - INFO - Epoch 16/30 - Loss: 0.2517
+2025-04-13 22:12:03,991 - INFO - Epoch 17/30 - Loss: 0.2104
+2025-04-13 22:12:05,491 - INFO - Epoch 18/30 - Loss: 0.2987
+2025-04-13 22:12:05,678 - INFO - Epoch 19/30 - Loss: 0.1299
+2025-04-13 22:12:05,869 - INFO - Epoch 20/30 - Loss: 0.0872
+2025-04-13 22:12:06,059 - INFO - Epoch 21/30 - Loss: 0.0478
+2025-04-13 22:12:06,250 - INFO - Epoch 22/30 - Loss: 0.0009
+2025-04-13 22:12:06,518 - INFO - Epoch 23/30 - Loss: 0.0871
+2025-04-13 22:12:06,738 - INFO - Epoch 24/30 - Loss: -0.0246
+2025-04-13 22:12:07,012 - INFO - Epoch 25/30 - Loss: 0.0114
+2025-04-13 22:12:07,353 - INFO - Epoch 26/30 - Loss: 0.0458
+2025-04-13 22:12:07,878 - INFO - Epoch 27/30 - Loss: 0.0960
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 1.0726569890975952 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:12:10,392 - INFO - Epoch 28/30 - Loss: 0.1230
+2025-04-13 22:12:10,893 - INFO - Epoch 29/30 - Loss: 0.0992
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 5.066227912902832 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:12:13,395 - INFO - Epoch 30/30 - Loss: 0.2025
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 1.3596614599227905 which is larger than the tolerance of 0.01 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:12:15,641 - INFO - Validation R² (Fold 1): -0.8941
+2025-04-13 22:12:15,642 - INFO - 
+Fold 2/4
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:81: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:82: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:83: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
+2025-04-13 22:12:15,826 - INFO - Epoch 1/30 - Loss: 0.9567
+2025-04-13 22:12:16,010 - INFO - Epoch 2/30 - Loss: 0.9039
+2025-04-13 22:12:16,192 - INFO - Epoch 3/30 - Loss: 0.8498
+2025-04-13 22:12:16,376 - INFO - Epoch 4/30 - Loss: 0.7924
+2025-04-13 22:12:16,559 - INFO - Epoch 5/30 - Loss: 0.7319
+2025-04-13 22:12:16,743 - INFO - Epoch 6/30 - Loss: 0.6702
+2025-04-13 22:12:16,927 - INFO - Epoch 7/30 - Loss: 0.6137
+2025-04-13 22:12:17,109 - INFO - Epoch 8/30 - Loss: 0.5660
+2025-04-13 22:12:17,291 - INFO - Epoch 9/30 - Loss: 0.5266
+2025-04-13 22:12:17,475 - INFO - Epoch 10/30 - Loss: 0.4940
+2025-04-13 22:12:17,659 - INFO - Epoch 11/30 - Loss: 0.4648
+2025-04-13 22:12:17,841 - INFO - Epoch 12/30 - Loss: 0.4354
+2025-04-13 22:12:18,023 - INFO - Epoch 13/30 - Loss: 0.3874
+2025-04-13 22:12:18,208 - INFO - Epoch 14/30 - Loss: 0.3606
+2025-04-13 22:12:18,407 - INFO - Epoch 15/30 - Loss: 0.3207
+2025-04-13 22:12:18,589 - INFO - Epoch 16/30 - Loss: 0.2573
+2025-04-13 22:12:18,776 - INFO - Epoch 17/30 - Loss: 0.2186
+2025-04-13 22:12:18,960 - INFO - Epoch 18/30 - Loss: 0.1757
+2025-04-13 22:12:19,146 - INFO - Epoch 19/30 - Loss: 0.1206
+2025-04-13 22:12:19,330 - INFO - Epoch 20/30 - Loss: 0.0836
+2025-04-13 22:12:19,513 - INFO - Epoch 21/30 - Loss: 0.0328
+2025-04-13 22:12:21,908 - INFO - Epoch 22/30 - Loss: 0.1937
+2025-04-13 22:12:22,095 - INFO - Epoch 23/30 - Loss: -0.0421
+2025-04-13 22:12:22,311 - INFO - Epoch 24/30 - Loss: -0.0075
+2025-04-13 22:12:23,428 - INFO - Epoch 25/30 - Loss: 0.1410
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 3.701650619506836 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:12:25,933 - INFO - Epoch 26/30 - Loss: 0.1205
+2025-04-13 22:12:26,241 - INFO - Epoch 27/30 - Loss: -0.0063
+2025-04-13 22:12:26,690 - INFO - Epoch 28/30 - Loss: 0.0548
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 1.2672449350357056 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:12:29,204 - INFO - Epoch 29/30 - Loss: 0.0887
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 1.6228560209274292 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:12:31,708 - INFO - Epoch 30/30 - Loss: 0.1113
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 5.5312066078186035 which is larger than the tolerance of 0.01 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:12:33,957 - INFO - Validation R² (Fold 2): -30.6190
+2025-04-13 22:12:33,957 - INFO - 
+Fold 3/4
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:81: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:82: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:83: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
+2025-04-13 22:12:34,149 - INFO - Epoch 1/30 - Loss: 0.9071
+2025-04-13 22:12:34,334 - INFO - Epoch 2/30 - Loss: 0.8606
+2025-04-13 22:12:34,517 - INFO - Epoch 3/30 - Loss: 0.8077
+2025-04-13 22:12:34,699 - INFO - Epoch 4/30 - Loss: 0.7496
+2025-04-13 22:12:34,884 - INFO - Epoch 5/30 - Loss: 0.6956
+2025-04-13 22:12:35,069 - INFO - Epoch 6/30 - Loss: 0.6452
+2025-04-13 22:12:35,251 - INFO - Epoch 7/30 - Loss: 0.6023
+2025-04-13 22:12:35,433 - INFO - Epoch 8/30 - Loss: 0.5621
+2025-04-13 22:12:35,614 - INFO - Epoch 9/30 - Loss: 0.5310
+2025-04-13 22:12:35,797 - INFO - Epoch 10/30 - Loss: 0.5016
+2025-04-13 22:12:35,980 - INFO - Epoch 11/30 - Loss: 0.4683
+2025-04-13 22:12:36,164 - INFO - Epoch 12/30 - Loss: 0.4379
+2025-04-13 22:12:36,357 - INFO - Epoch 13/30 - Loss: 0.3996
+2025-04-13 22:12:36,540 - INFO - Epoch 14/30 - Loss: 0.3456
+2025-04-13 22:12:36,722 - INFO - Epoch 15/30 - Loss: 0.3030
+2025-04-13 22:12:36,907 - INFO - Epoch 16/30 - Loss: 0.2550
+2025-04-13 22:12:37,090 - INFO - Epoch 17/30 - Loss: 0.2096
+2025-04-13 22:12:37,272 - INFO - Epoch 18/30 - Loss: 0.1637
+2025-04-13 22:12:37,457 - INFO - Epoch 19/30 - Loss: 0.1190
+2025-04-13 22:12:37,640 - INFO - Epoch 20/30 - Loss: 0.0851
+2025-04-13 22:12:37,825 - INFO - Epoch 21/30 - Loss: 0.0450
+2025-04-13 22:12:38,008 - INFO - Epoch 22/30 - Loss: 0.0038
+2025-04-13 22:12:38,190 - INFO - Epoch 23/30 - Loss: -0.0420
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 2.3896660804748535 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:12:40,697 - INFO - Epoch 24/30 - Loss: 0.1563
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 4.663360595703125 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:12:43,200 - INFO - Epoch 25/30 - Loss: 0.1334
+2025-04-13 22:12:43,566 - INFO - Epoch 26/30 - Loss: 0.0733
+2025-04-13 22:12:43,779 - INFO - Epoch 27/30 - Loss: -0.1404
+2025-04-13 22:12:44,200 - INFO - Epoch 28/30 - Loss: 0.0353
+2025-04-13 22:12:44,699 - INFO - Epoch 29/30 - Loss: 0.0484
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 1.2233104705810547 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:12:47,202 - INFO - Epoch 30/30 - Loss: 0.1117
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 0.06482468545436859 which is larger than the tolerance of 0.01 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:12:49,450 - INFO - Validation R² (Fold 3): 0.9720
+2025-04-13 22:12:49,450 - INFO - 
+Fold 4/4
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:81: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:82: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:83: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
+2025-04-13 22:12:49,636 - INFO - Epoch 1/30 - Loss: 0.9625
+2025-04-13 22:12:49,816 - INFO - Epoch 2/30 - Loss: 0.9090
+2025-04-13 22:12:49,999 - INFO - Epoch 3/30 - Loss: 0.8557
+2025-04-13 22:12:50,181 - INFO - Epoch 4/30 - Loss: 0.7977
+2025-04-13 22:12:50,363 - INFO - Epoch 5/30 - Loss: 0.7380
+2025-04-13 22:12:50,545 - INFO - Epoch 6/30 - Loss: 0.6767
+2025-04-13 22:12:50,728 - INFO - Epoch 7/30 - Loss: 0.6178
+2025-04-13 22:12:50,910 - INFO - Epoch 8/30 - Loss: 0.5664
+2025-04-13 22:12:51,095 - INFO - Epoch 9/30 - Loss: 0.5265
+2025-04-13 22:12:51,277 - INFO - Epoch 10/30 - Loss: 0.4877
+2025-04-13 22:12:51,458 - INFO - Epoch 11/30 - Loss: 0.4604
+2025-04-13 22:12:51,640 - INFO - Epoch 12/30 - Loss: 0.4271
+2025-04-13 22:12:51,821 - INFO - Epoch 13/30 - Loss: 0.3980
+2025-04-13 22:12:52,006 - INFO - Epoch 14/30 - Loss: 0.3602
+2025-04-13 22:12:52,188 - INFO - Epoch 15/30 - Loss: 0.3148
+2025-04-13 22:12:52,370 - INFO - Epoch 16/30 - Loss: 0.2704
+2025-04-13 22:12:52,552 - INFO - Epoch 17/30 - Loss: 0.2151
+2025-04-13 22:12:52,738 - INFO - Epoch 18/30 - Loss: 0.1679
+2025-04-13 22:12:52,919 - INFO - Epoch 19/30 - Loss: 0.1227
+2025-04-13 22:12:53,100 - INFO - Epoch 20/30 - Loss: 0.0797
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 2.189918279647827 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:12:55,602 - INFO - Epoch 21/30 - Loss: 0.2151
+2025-04-13 22:12:55,784 - INFO - Epoch 22/30 - Loss: -0.0110
+2025-04-13 22:12:55,967 - INFO - Epoch 23/30 - Loss: -0.0452
+2025-04-13 22:12:56,149 - INFO - Epoch 24/30 - Loss: -0.0835
+2025-04-13 22:12:56,333 - INFO - Epoch 25/30 - Loss: -0.1255
+2025-04-13 22:12:56,616 - INFO - Epoch 26/30 - Loss: 0.0314
+2025-04-13 22:12:56,799 - INFO - Epoch 27/30 - Loss: -0.2212
+2025-04-13 22:12:57,011 - INFO - Epoch 28/30 - Loss: -0.1719
+2025-04-13 22:12:58,396 - INFO - Epoch 29/30 - Loss: 0.0719
+2025-04-13 22:12:58,617 - INFO - Epoch 30/30 - Loss: -0.2309
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 3.4242851734161377 which is larger than the tolerance of 0.01 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
+2025-04-13 22:13:00,868 - INFO - Validation R² (Fold 4): -10.6344
+2025-04-13 22:13:00,868 - INFO - 
+Average R² across folds: -10.2939
+2025-04-13 22:13:00,868 - INFO - Best R² across folds: 0.9720
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:145: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  final_model = best_fold_model(torch.tensor(X, dtype=torch.float32).to(device),
+/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:146: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(y, dtype=torch.float32).to(device),
+2025-04-13 22:13:00,878 - INFO - Generated 2250 points with 500m resolution
+/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 0.2746654450893402 which is larger than the tolerance of 0.01 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
+  warnings.warn(
