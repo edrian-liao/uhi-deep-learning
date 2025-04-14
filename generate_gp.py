@@ -205,8 +205,20 @@ exact_gp_model = train_model(x_tensor, y_tensor, 'ExactGP', n_splits=4)
 logging.info('\n')
 ns_gp_model = train_model(x_tensor, y_tensor,'NonStationaryGP', num_points=num_points, n_splits=4)
 
-# Bounding box coordinates in kilometers
-xmin, ymin, xmax, ymax = bounds
+# Adjust bounding box based on city-specific overrides
+if city == "Durham":
+    xmin, ymin, xmax, ymax = bounds[0], 4.291e6, -8.773e6, bounds[3]
+elif city == "Raleigh":
+    xmin, ymin, xmax, ymax = -8.764e6, bounds[1], bounds[2], 4.285e6
+elif city == "Baltimore_A":
+    xmin, ymin, xmax, ymax = -8.54e6, 4.75e6, bounds[2], bounds[3]
+elif city == "Baltimore_B":
+    xmin, ymin, xmax, ymax = bounds[0], bounds[1], -8.56e6, 4.722e6
+elif city == "NYC":
+    xmin, ymin, xmax, ymax = bounds[0], 4.976e6, -8.224e6, bounds[3]
+else:
+    xmin, ymin, xmax, ymax = bounds
+
 
 # Generate coordinate grid
 x_coords = np.arange(xmin, xmax + resolution, resolution)
