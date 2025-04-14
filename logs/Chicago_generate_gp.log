@@ -2,14 +2,6 @@
 2025-04-14 00:37:06,998 - INFO - Using device: cuda
 2025-04-14 00:37:07,000 - INFO - 
 Fold 1/4
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:77: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:79: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
 2025-04-14 00:37:10,626 - INFO - Epoch 1/40 - Loss: 0.8919
 2025-04-14 00:37:10,805 - INFO - Epoch 2/40 - Loss: 0.8613
 2025-04-14 00:37:10,986 - INFO - Epoch 3/40 - Loss: 0.8299
@@ -53,14 +45,6 @@ Fold 1/4
 2025-04-14 00:37:20,030 - INFO - Validation R² (Fold 1): 0.9921
 2025-04-14 00:37:20,030 - INFO - 
 Fold 2/4
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:77: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:79: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
 2025-04-14 00:37:20,220 - INFO - Epoch 1/40 - Loss: 0.8932
 2025-04-14 00:37:20,397 - INFO - Epoch 2/40 - Loss: 0.8628
 2025-04-14 00:37:20,576 - INFO - Epoch 3/40 - Loss: 0.8317
@@ -104,14 +88,6 @@ Fold 2/4
 2025-04-14 00:37:29,681 - INFO - Validation R² (Fold 2): 0.9921
 2025-04-14 00:37:29,681 - INFO - 
 Fold 3/4
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:77: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:79: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
 2025-04-14 00:37:29,861 - INFO - Epoch 1/40 - Loss: 0.8931
 2025-04-14 00:37:30,042 - INFO - Epoch 2/40 - Loss: 0.8627
 2025-04-14 00:37:30,223 - INFO - Epoch 3/40 - Loss: 0.8313
@@ -155,14 +131,6 @@ Fold 3/4
 2025-04-14 00:37:39,342 - INFO - Validation R² (Fold 3): 0.9919
 2025-04-14 00:37:39,342 - INFO - 
 Fold 4/4
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:77: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:79: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
 2025-04-14 00:37:39,523 - INFO - Epoch 1/40 - Loss: 0.8926
 2025-04-14 00:37:39,704 - INFO - Epoch 2/40 - Loss: 0.8621
 2025-04-14 00:37:39,882 - INFO - Epoch 3/40 - Loss: 0.8310
@@ -207,22 +175,10 @@ Fold 4/4
 2025-04-14 00:37:48,954 - INFO - 
 Average R² across folds: 0.9921
 2025-04-14 00:37:48,954 - INFO - Best R² across folds: 0.9921
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:138: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  final_model = best_fold_model(torch.tensor(X, dtype=torch.float32).to(device),
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  torch.tensor(y, dtype=torch.float32).to(device),
 2025-04-14 00:37:48,956 - INFO - 
 
 2025-04-14 00:37:48,957 - INFO - 
 Fold 1/4
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:77: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:79: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
 2025-04-14 00:37:49,138 - INFO - Epoch 1/30 - Loss: 0.9028
 2025-04-14 00:37:49,318 - INFO - Epoch 2/30 - Loss: 0.8240
 2025-04-14 00:37:49,498 - INFO - Epoch 3/30 - Loss: 0.7816
@@ -253,19 +209,9 @@ Fold 1/4
 2025-04-14 00:37:54,007 - INFO - Epoch 28/30 - Loss: -0.2512
 2025-04-14 00:37:54,197 - INFO - Epoch 29/30 - Loss: -0.2633
 2025-04-14 00:37:54,413 - INFO - Epoch 30/30 - Loss: -0.2516
-/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 1.714936375617981 which is larger than the tolerance of 0.01 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
-  warnings.warn(
 2025-04-14 00:37:56,657 - INFO - Validation R² (Fold 1): -2.1074
 2025-04-14 00:37:56,658 - INFO - 
 Fold 2/4
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:77: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:79: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
 2025-04-14 00:37:56,843 - INFO - Epoch 1/30 - Loss: 0.8377
 2025-04-14 00:37:57,026 - INFO - Epoch 2/30 - Loss: 0.8026
 2025-04-14 00:37:57,208 - INFO - Epoch 3/30 - Loss: 0.7654
@@ -293,24 +239,12 @@ Fold 2/4
 2025-04-14 00:38:02,237 - INFO - Epoch 25/30 - Loss: -0.1212
 2025-04-14 00:38:02,479 - INFO - Epoch 26/30 - Loss: -0.0631
 2025-04-14 00:38:02,855 - INFO - Epoch 27/30 - Loss: 0.0128
-/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 1.9014570713043213 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
-  warnings.warn(
 2025-04-14 00:38:05,357 - INFO - Epoch 28/30 - Loss: 0.0653
 2025-04-14 00:38:05,867 - INFO - Epoch 29/30 - Loss: 0.0445
 2025-04-14 00:38:06,243 - INFO - Epoch 30/30 - Loss: 0.0071
-/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 1.3985790014266968 which is larger than the tolerance of 0.01 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
-  warnings.warn(
 2025-04-14 00:38:08,488 - INFO - Validation R² (Fold 2): -1.0017
 2025-04-14 00:38:08,488 - INFO - 
 Fold 3/4
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:77: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:79: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
 2025-04-14 00:38:08,670 - INFO - Epoch 1/30 - Loss: 0.8418
 2025-04-14 00:38:08,850 - INFO - Epoch 2/30 - Loss: 0.8049
 2025-04-14 00:38:09,032 - INFO - Epoch 3/30 - Loss: 0.7677
@@ -336,30 +270,14 @@ Fold 3/4
 2025-04-14 00:38:12,650 - INFO - Epoch 23/30 - Loss: -0.0463
 2025-04-14 00:38:12,914 - INFO - Epoch 24/30 - Loss: 0.0292
 2025-04-14 00:38:13,092 - INFO - Epoch 25/30 - Loss: -0.1156
-/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 5.857937335968018 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
-  warnings.warn(
 2025-04-14 00:38:15,591 - INFO - Epoch 26/30 - Loss: 0.0557
 2025-04-14 00:38:15,775 - INFO - Epoch 27/30 - Loss: -0.1756
-/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 4.69688081741333 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
-  warnings.warn(
 2025-04-14 00:38:18,276 - INFO - Epoch 28/30 - Loss: 0.0362
 2025-04-14 00:38:19,837 - INFO - Epoch 29/30 - Loss: 0.0379
-/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 7.033557891845703 which is larger than the tolerance of 1 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
-  warnings.warn(
 2025-04-14 00:38:22,337 - INFO - Epoch 30/30 - Loss: 0.0475
-/hpc/home/esl26/.conda/envs/wildfire-ai/lib/python3.10/site-packages/linear_operator/utils/linear_cg.py:338: NumericalWarning: CG terminated in 1000 iterations with average residual norm 0.2201983481645584 which is larger than the tolerance of 0.01 specified by linear_operator.settings.cg_tolerance. If performance is affected, consider raising the maximum number of CG iterations by running code in a linear_operator.settings.max_cg_iterations(value) context.
-  warnings.warn(
 2025-04-14 00:38:24,583 - INFO - Validation R² (Fold 3): 0.9234
 2025-04-14 00:38:24,583 - INFO - 
 Fold 4/4
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:77: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_x = torch.tensor(X[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  train_y = torch.tensor(y[train_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:79: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_x = torch.tensor(X[val_index], dtype=torch.float32).to(device)
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:80: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  val_y = torch.tensor(y[val_index], dtype=torch.float32).to(device)
 2025-04-14 00:38:24,765 - INFO - Epoch 1/30 - Loss: 0.9922
 2025-04-14 00:38:24,947 - INFO - Epoch 2/30 - Loss: 0.8300
 2025-04-14 00:38:25,126 - INFO - Epoch 3/30 - Loss: 0.7861
@@ -394,8 +312,4 @@ Fold 4/4
 2025-04-14 00:38:31,983 - INFO - 
 Average R² across folds: -0.3049
 2025-04-14 00:38:31,983 - INFO - Best R² across folds: 0.9663
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:142: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  final_model = best_fold_model(torch.tensor(X, dtype=torch.float32).to(device),
-/hpc/group/carlsonlab/esl26/uhi-deep-learning/generate_gp.py:143: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  torch.tensor(y, dtype=torch.float32).to(device),
 2025-04-14 00:38:31,986 - INFO - Generated 23560 points with 300m resolution
