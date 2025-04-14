@@ -84,10 +84,10 @@ def train_model(X, y, model_str='ExactGP', num_points=16, n_splits=5):
         # likelihood = gpytorch.likelihoods.StudentTLikelihood()
         if model_str == 'ExactGP':
             model = ExactGPModel(train_x, train_y, likelihood).to(device)
-            EPOCHS = 40
+            EPOCHS = 60
         elif model_str == 'NonStationaryGP':
             model = NonStationaryGPModel(train_x, train_y, likelihood, num_points=num_points).to(device)
-            EPOCHS = 30
+            EPOCHS = 50
 
         model.train()
         likelihood.train()
@@ -176,9 +176,16 @@ X = df[['x', 'y']].to_numpy()
 y = df['temperature'].astype(float).to_numpy()
 
 # Step 1: Randomly pick subset
-indices = np.random.choice(len(X), size=20000, replace=False)
-X = X[indices]
-y = y[indices]
+if len(X) > 20000:
+    logging.info(f"Original dataset size: {len(X)}. Randomly selecting 20000 samples.")
+    # Randomly select 20000 samples
+    indices = np.random.choice(len(X), size=20000, replace=False)
+    X = X[indices]
+    y = y[indices]
+else:
+    logging.info(f"Original dataset size: {len(X)}. Using all samples.")
+    # Use all samples
+
 
 # Step 2: Normalize that subset
 x_mean = X.mean(axis=0)
