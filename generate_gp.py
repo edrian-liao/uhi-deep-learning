@@ -151,26 +151,17 @@ def train_model(X, y, model_str='ExactGP', num_points=16, n_splits=5):
     return final_model
 
 def generate_predictions(model, likelihood, points, num_samples=4, y_mean=0.0, y_std=1.0):
-    """
-    Generate 1 mean and `num_samples` sampled predictions from the posterior.
-    Applies unnormalization using provided mean and std of original y.
+    model = model.to("cpu")
+    likelihood = likelihood.to("cpu")
+    points = points.to("cpu")
 
-    Returns:
-        mean_pred: [num_points]
-        sample_preds: [num_samples, num_points]
-    """
     model.eval()
     likelihood.eval()
 
     with torch.no_grad(), gpytorch.settings.fast_pred_var():
-        predictive_dist = likelihood(model(points))  # GP predictive distribution
-
-        # Posterior mean (unnormalized)
+        predictive_dist = likelihood(model(points))
         mean_pred = predictive_dist.mean.cpu().numpy() * y_std + y_mean
-
-        # Posterior samples (unnormalized)
-        sample_preds = predictive_dist.rsample(torch.Size([num_samples]))  # [num_samples, num_points]
-        sample_preds = sample_preds.cpu().numpy() * y_std + y_mean
+        sample_preds = predictive_dist.rsample(torch.Size([num_samples])).cpu().numpy() * y_std + y_mean
 
     return mean_pred, sample_preds
 
